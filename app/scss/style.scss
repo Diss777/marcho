@@ -3,7 +3,100 @@
 @import 'reset';
 @import 'global';
 
+.header {
+  padding: 40px 0;
 
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
+.menu {
+  &__list {
+    display: flex;
+  }
+
+  &__list-item:not(:last-child) {
+    margin-right: 35px;
+  }
+
+  &__list-link {
+    color: $title;
+    padding-bottom: 2px;
+    transition: color 0.3s;
+    @extend %roboto-400;
+
+    &:hover {
+      color: $accent;
+      border-bottom: 1px solid $accent;
+      @extend %roboto-700;
+    }
+  }
+
+  &__list-link--active {
+    color: $accent;
+    border-bottom: 1px solid $accent;
+    @extend %roboto-700;
+  }
+}
+
+.user-nav {
+  display: flex;
+
+  &__item {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 25px;
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+  }
+
+  &__item--user {
+    background-image: url('../images/icon/user.svg');
+  }
+
+  &__item--search {
+    background-image: url('../images/icon/search.svg');
+  }
+
+  &__item--heart {
+    background-image: url('../images/icon/heart.svg');
+  }
+
+  &__item--cart {
+    background-image: url('../images/icon/cart.svg');
+  }
+
+  &__link:not(:last-child) {
+    margin-right: 25px;
+  }
+
+  &__num {
+    position: absolute;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background-color: $accent;
+   top: -6px;
+   right: -11px;
+   font-family: Quicksand;
+   font-size: 12px;
+   line-height: 20px;
+   font-weight: 500;
+   color: #ffffff;
+   text-align: center;
+  }
+}
 
 @import 'media';
